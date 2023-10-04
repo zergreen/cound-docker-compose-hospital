@@ -1,0 +1,23 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./kmitl-hospital-front
+    ports:
+      - '8000:8000'
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./back-hospital
+    ports:
+      - '3000:3000'
+    depends_on:
+      - database
+
+  database:
+    build:
+      context: ./api-server
+    ports:
+      - '3030:3030'

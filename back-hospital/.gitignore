@@ -1,0 +1,6 @@
+# เราจะไมเอา เจ้า พวกนี้ อัพขึ้น github
+
+# เป็น directory ที่เก็บตัว package ต่างๆ ไว้ เราจะห้าม อัพขึ้น เด็ดขาด
+node_modules/
+
+package-lock.json

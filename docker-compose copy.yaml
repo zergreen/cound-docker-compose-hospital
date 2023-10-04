@@ -1,0 +1,23 @@
+version: '4'
+services:
+  frontend:
+    build:
+      context: ./kmitl-hospital-front
+    ports:
+      - '8000:8000'
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./back-hospital
+    ports:
+      - '3000:3000' # Change the mapping to use port 8001 on the host
+    depends_on:
+      - database
+
+  database:
+    build:
+      context: ./api-server
+    ports:
+      - '3030:3030' # Change the mapping to use port 8001 on the host

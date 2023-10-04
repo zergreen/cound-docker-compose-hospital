@@ -1,0 +1,45 @@
+CREATE TABLE Appoint (
+  Appoint_ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  Doctor_ID int,
+  Patient_ID int,
+  Report_ID int,
+  FOREIGN KEY (Doctor_ID) REFERENCES Employee(Employee_ID),
+  FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
+  FOREIGN KEY (Report_ID) REFERENCES Report(Report_ID)
+);
+
+INSERT INTO
+  Appoint (Doctor_ID, Patient_ID, Report_ID)
+VALUES
+  (1, 1, 1);
+
+INSERT INTO
+  Appoint (Doctor_ID, patient_id, Report_ID)
+VALUES
+  (2, 1, 2);
+
+INSERT INTO
+  Appoint (Doctor_ID, patient_id, Report_ID)
+VALUES
+  (3, 2, 3);
+
+SELECT
+  Appoint.Appoint_ID,
+  Appoint.Doctor_ID,
+  Appoint.Patient_ID,
+  Appoint.Report_ID Employee.Employee_ID,
+  Employee.Employee_name,
+  Employee.Employee_Lname,
+  Patient.Patient_ID,
+  Patient.Patient_name,
+  Patient.Patient_lname,
+  Patient.Patient_Citizen,
+  Report.Report_ID,
+  Report.Report_date,
+  Report.Report_Symptom,
+  Report.Report_Status,
+FROM
+  Appoint
+  INNER JOIN Employee ON Appoint.Appoint_ID = Employee.Employee_ID
+  INNER JOIN Patient ON Appoint.Appoint_ID = Patient.Patient_ID
+  INNER JOIN Report ON Appoint.Appoint_ID = Report.Report_ID;

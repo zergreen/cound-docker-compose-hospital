@@ -1,0 +1,39 @@
+.icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.icon-button:hover {
+  background-color: green;
+  color: white;
+}
+
+.icon-button.canceled:hover {
+  background-color: red;
+  color: white;
+}
+
+/* ExampleComponent.css */
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.loading h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+.centered-element {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
