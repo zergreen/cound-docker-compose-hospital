@@ -1,8 +1,10 @@
-version: '3'
+version: '4'
 services:
   frontend:
-    build:
-      context: ./kmitl-hospital-front
+    # dis comment two below this if want to build your selt 
+    # build:
+    #  context: ./kmitl-hospital-frontend
+    image: kawhao/frontend:1.0
     ports:
       - '8000:8000'
     depends_on:

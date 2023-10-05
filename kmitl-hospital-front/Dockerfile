@@ -1,4 +1,5 @@
 # Use an official Node.js runtime as the base image
+# FROM --platform=linux/amd64 node:current-alpine as base-amd64
 FROM node:current-alpine
 
 # Set the working directory
